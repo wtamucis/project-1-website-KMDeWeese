@@ -1,4 +1,88 @@
-.golden-img {
-    max-width: 50%;
-    height: auto;
+body {
+  background-color: #f0f4f7;
+  color: #222;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* centers the main content and keeps width 800-1024px */
+main {
+  width: 960px;
+  margin: 20px auto;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+/* header/nav */
+header {
+  background-color: #091686; /* FFA-ish dark blue */
+  padding: 10px 0;
+  text-align: center;
+}
+
+header h1 {
+  color: #fff;
+  margin: 0;
+  text-align: center; /* centered heading per requirement */
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+p {
+  text-align: left;
+  line-height: 1.5;
+}
+
+.citation {
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+/* form */
+form {
+  margin-top: 20px;
+  background-color: #e2edf4;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  max-width: 400px;
+}
+
+input[type="submit"] {
+  background-color: #003366;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #00284d;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  color: #555;
 }
