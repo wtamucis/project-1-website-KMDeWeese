@@ -4,6 +4,49 @@
   <meta charset="UTF-8">
   <title>Contact Claude FFA</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* make the main area hold the blurred background */
+    main.contact-page {
+      position: relative;
+      overflow: hidden;
+      /* remove solid white from styles.css just for this page */
+      background: transparent;
+      box-shadow: none;
+    }
+
+    /* blurred background image */
+    main.contact-page::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("images/ffa and ag/Claude FFA & Ag 2024 - _26/FFA Theme/FFA Emblem Background.jpg") center/80% no-repeat;
+      filter: blur(10px);
+      opacity: 0.35;
+      z-index: 0;
+      transform: scale(1.2); /* helps hide blur edges */
+    }
+
+    /* actual content on top */
+    .contact-content {
+      position: relative;
+      z-index: 1;
+      background: rgba(1, 15, 143, 0.959); /* translucent Claude blue */
+      padding: 20px;
+      border-radius: 6px;
+    }
+
+    .contact-content h2,
+    .contact-content p,
+    .contact-content label {
+      color: #ffffff;
+    }
+
+    /* form inside the contact content should stretch nicely */
+    .contact-content form {
+      background: rgba(7, 7, 7, 0.25);
+      margin-top: 15px;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -11,6 +54,7 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="aboutffa.html">About FFA</a>
+      <a href="committees.html">Chapter Committees</a>
       <a href="officers.html">Officers</a>
       <a href="calendar.html">Calendar</a>
       <a href="pastevents.html">Past Events</a>
@@ -18,41 +62,39 @@
     </nav>
   </header>
 
-  <main>
-    <h2>Contact the Chapter</h2>
-    <p>If you are a parent, community member, or FFA student, you can use this form to reach the Claude FFA Chapter. You can ask about fundraisers, ongoing projects, or contest practice times.</p>
-    <p><i>Note to student:</i> you can edit the purpose text to “chapter t-shirt order,” “banquet RSVP,” or “community service sign-up.”</p>
-    <p>This form sends data to the w3schools test page, which is what your assignment asked for.</p>
+  <main class="contact-page">
+    <div class="contact-content">
+      <h2>Contact the Claude FFA Chapter</h2>
+      <p>If you have questions about membership, contests, fundraisers, or projects, send us a message below.</p>
+      <p><i>Students:</i> you can rewrite this text to match your assignment (donation form, banquet RSVP, registration, etc.).</p>
 
-    <img src="images/logo.png" alt="Claude FFA emblem" title="Claude FFA" width="200" height="200">
+      <form action="https://www.w3schools.com/action_page.php" method="post">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
 
-    <form action="https://www.w3schools.com/action_page.php" method="post">
-      <label for="name">Name:</label><br>
-      <input type="text" id="name" name="name" required><br><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
 
-      <label for="email">Email:</label><br>
-      <input type="email" id="email" name="email" required><br><br>
+        <label for="reason">Reason for contact:</label><br>
+        <select id="reason" name="reason">
+          <option value="general">General question</option>
+          <option value="banquet">Banquet / event</option>
+          <option value="project">Ag mechanics project</option>
+          <option value="dues">FFA dues / membership</option>
+        </select><br><br>
 
-      <label for="reason">Reason for contact:</label><br>
-      <select id="reason" name="reason">
-        <option value="general">General</option>
-        <option value="banquet">Banquet</option>
-        <option value="upcoming event">Upcoming Event</option>
-        <option value="project">Ag Mech. Project</option>
-        <option value="ffa-dues">FFA Dues/Membership</option>
-      </select><br><br>
+        <label>Are you a current member?</label><br>
+        <input type="radio" id="yes" name="member" value="yes" checked>
+        <label for="yes">Yes</label>
+        <input type="radio" id="no" name="member" value="no">
+        <label for="no">No</label><br><br>
 
-      <label>Are you a current member?</label><br>
-      <input type="radio" id="yes" name="member" value="yes" checked>
-      <label for="yes">Yes</label>
-      <input type="radio" id="no" name="member" value="no">
-      <label for="no">No</label><br><br>
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="40"></textarea><br><br>
 
-      <label for="message">Message:</label><br>
-      <textarea id="message" name="message" rows="4" cols="40"></textarea><br><br>
-
-      <input type="submit" value="Send to Claude FFA">
-    </form>
+        <input type="submit" value="Send to Claude FFA">
+      </form>
+    </div>
   </main>
 
   <footer>
